@@ -1,36 +1,30 @@
 console.log("Start");
-
-function x1(param) {
+function xyz(param) {
   param();
 }
 
-function x2(param) {
-  param();
-}
-x1(function () {
-  console.log("Pass As Argument 1");
+xyz(function par() {
+  console.log("Pass As Parameter");
 });
-// x2(function () {
-//   console.log("Pass As Argument 1");
-// });
 
 console.log("End");
 
-// Output
-/*  Start
-    Pass As Argument
-    End
+/*
+Output-
+  Start
+  Pass As Parameter
+  End
 */
 
-// As there is nothing to wait here thats why it return instantly
-// console.log("Start");
-
-function x2(param) {
-  setTimeout(param, 5000);
+console.log("Start");
+function xyz2() {
+  var count = 0;
+  setTimeout(function () {
+    console.log("Pass As Parameter 2", ++count);
+  }, 5000);
+  return count;
 }
 
-x2(function () {
-  console.log("Pass As Argument 2");
-});
+console.log("Output :", xyz2());
 
-// console.log("End");
+console.log("End");
